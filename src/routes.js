@@ -1,10 +1,10 @@
-const { Router } = require('express')
-const { request, response } = require('./routes')
-const convertController = require('./service/convert.controller')
+const { Router } = require("express")
+import convertController from './service/convert.controller'
 
 const routes = Router()
 
-// Convert Routes
-routes.get('/', convertController.convertCDNLogsToAgoraFormat)
+
+routes.post("/convert", convertController.convertMoney)
+// routes.get("/history", convertController.getHistory) FAZER A SERVICE PARA OBTER O HISTORICO NO DB
 
 module.exports = routes
